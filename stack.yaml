@@ -14,11 +14,39 @@ packages:
     - ./ihaskell-display/ihaskell-plot
     - ./ihaskell-display/ihaskell-static-canvas
     - ./ihaskell-display/ihaskell-widgets
-resolver: lts-9.6
-extra-deps: []
-flags:
-  ihaskell:
-    binpkgdb: false
+    - location:
+        git: https://github.com/gtk2hs/gtk2hs.git
+        commit: 843d83548bd076975f1869e6768768b5ed24b268
+      subdirs:
+        - cairo
+        - glib
+        - pango
+        - tools
+      extra-dep: true
+    - location:
+        git: https://github.com/amcphail/plot.git
+        commit: cc5cdff696aa99e1001124917c3b87b95529c4e3
+      extra-dep: true
+resolver: nightly-2017-09-25
+allow-newer: true
+extra-deps:
+- Chart-1.8.2
+- Chart-cairo-1.8.2
+- cubicbezier-0.6.0.4
+- diagrams-1.4
+- diagrams-cairo-1.4
+- diagrams-contrib-1.4.1
+- diagrams-core-1.4.0.1
+- diagrams-lib-1.4.1.2
+- diagrams-solve-0.1.1
+- diagrams-svg-1.4.1
+- dual-tree-0.2.1
+- fast-math-1.0.2
+- magic-1.1
+- mfsolve-0.3.2.0
+- statestack-0.2.0.5
+- static-canvas-0.2.0.3
+- svg-builder-0.1.0.2
 
 nix:
   enable: false
