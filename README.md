@@ -36,6 +36,7 @@ pip3 install -r requirements.txt
 curl -sSL https://get.haskellstack.org/ | sh
 git clone https://github.com/gibiansky/IHaskell
 cd IHaskell
+stack setup
 stack install gtk2hs-buildtools
 stack install --fast
 ihaskell install --stack
